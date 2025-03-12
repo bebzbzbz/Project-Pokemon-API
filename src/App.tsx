@@ -2,11 +2,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './App.css'
 import Layout from './layout/Layout'
 import Home from './pages/Home/Home'
+import Selection from './pages/Selection/Selection'
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
       <Route index element={<Home/>}/>
+      <Route path="/selection" element={<Selection/>}/>
     </Route>
   ))
 

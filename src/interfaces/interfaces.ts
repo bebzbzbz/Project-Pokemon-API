@@ -1,8 +1,10 @@
+//type für Fetch der 20 Pokemons für Übersicht
 export type ListPoke = {
   name: string,
   url: string
 }
 
+//type für Fetch der einzelnen Pokemons
 export type Pokemon = {
   id: number;
   name: string;
@@ -64,3 +66,9 @@ export type Pokemon = {
     };
   }>;
 };
+
+//type für fetch Type
+export type TType = {
+  name: string,
+  url: string
+}
