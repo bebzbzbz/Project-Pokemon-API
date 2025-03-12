@@ -1,4 +1,9 @@
-export type Root = {
+export type ListPoke = {
+  name: string,
+  url: string
+}
+
+export type Pokemon = {
   id: number;
   name: string;
   abilities: Array<{
