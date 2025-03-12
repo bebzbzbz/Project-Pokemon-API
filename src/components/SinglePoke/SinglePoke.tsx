@@ -23,14 +23,32 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
         fetchData()
     }, [singlePoke])
 
+    let pokename : string = "";
+    let pokeId : string = ""
+    if(singlePoke) {
+        pokename = (singlePoke?.name).slice(0,1).toUpperCase() + (singlePoke?.name)?.slice(1)
+
+        switch(true) {
+            case singlePoke.id < 10: 
+                pokeId = "00" + singlePoke.id
+                break;
+            case singlePoke.id < 100: 
+                pokeId = "0" + singlePoke.id
+                break;
+            default:
+                pokeId = (singlePoke.id).toString()
+        }
+    }
+
+
     return (  
-        <div className="flex flex-col w-2/3 mb-10">
-            <div className="relative bg-yellow-200 rounded-t-xl flex justify-center">
-                <img className="-mt-10" src={singlePoke?.sprites.front_default} alt={singlePoke?.name}/>
+        <div className="flex flex-col">
+            <div className="relative bg-linear-to-tr from-yellow-200 to-amber-500 rounded-t-2xl flex justify-center h-23">
+                <img className="-mt-3 h-full" src={singlePoke?.sprites.other.showdown.front_default} alt={singlePoke?.name}/>
             </div>
-            <ul className="bg-green-200 rounded-b-xl flex justify-between px-3">
-                <li>#{singlePoke?.id}</li>
-                <li>{singlePoke?.name}</li>
+            <ul className="bg-white rounded-b-2xl flex justify-between px-3 py-1">
+                <li>#{pokeId}</li>
+                <li>{pokename}</li>
             </ul>
         </div>
     );
