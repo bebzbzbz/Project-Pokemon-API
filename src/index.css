@@ -26,10 +26,10 @@
 
 }
 
-/* body {
+main {
     background-color: #ccdadd;
-} */
+}
 
-/* .dark-mode {
-    background-color: #000000;
-} */
+main.dark-mode {
+    background-color: #05070f;
+}

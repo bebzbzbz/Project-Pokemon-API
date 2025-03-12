@@ -8,9 +8,7 @@ const Layout = () => {
     return (  
         <>
             {!hideHeader && <Header/>}
-
-                <Outlet/>
-
+            <Outlet/>
         </>
     );
 }
