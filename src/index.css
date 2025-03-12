@@ -26,6 +26,10 @@
 
 }
 
-html {
+main {
     background-color: #ccdadd;
+}
+
+main.dark-mode {
+    background-color: #05070f;
 }

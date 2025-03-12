@@ -3,6 +3,8 @@ import './App.css'
 import Layout from './layout/Layout'
 import Home from './pages/Home/Home'
 import Selection from './pages/Selection/Selection'
+import { useContext } from 'react'
+import { mainContext } from './context/MainProvider'
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
@@ -12,10 +14,12 @@ function App() {
     </Route>
   ))
 
+  const { dark } = useContext(mainContext) as any
+
   return (
-    <>
+    <main className={dark && `dark-mode`}>
       <RouterProvider router={router}/>
-    </>
+    </main>
   )
 }
 
