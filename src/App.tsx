@@ -13,9 +13,9 @@ function App() {
   ))
 
   return (
-    <>
+    <main className='dark-mode bg-background'>
       <RouterProvider router={router}/>
-    </>
+    </main>
   )
 }
 
