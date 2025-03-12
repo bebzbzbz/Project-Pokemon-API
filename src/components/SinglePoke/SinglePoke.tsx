@@ -15,13 +15,14 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
                 const response = await axios.get(pokemonFromList.url)
                 if (response) {
                     setSinglePoke(response.data)
+                    console.log(response);
                 }
             } catch (error) {
                 console.log(error);
             }
         }
         fetchData()
-    }, [singlePoke])
+    }, [])
 
     let pokename : string = "";
     let pokeId : string = ""
