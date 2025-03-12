@@ -1,19 +1,25 @@
 import { createContext, useState } from "react";
+import { ISingleType, ListPoke, TType } from "../interfaces/interfaces";
 
-export const mainContext = createContext({});
+export const mainContext = createContext({}) as any;
 
+const MainProvider = ({ children }: { children: React.ReactNode }) => {
+    //useState für fetch mit Liste 20 Pokes
+    const [dataPokeList, setDataPokeList] = useState<ListPoke[]>([]);
 
-const MainProvider = ({children}: {children: React.ReactNode}) => {
+  //useState für fetch der Types
+  const [dataTypes, setDataTypes] = useState<TType[]>([])
 
-const [dataPokeList, setDataPokeList] = useState()
+  //useState für fetch der einzelnen Types
+  const [singleType, setSingleType] = useState<ISingleType | null>(null)
 
-    return (  
-        <>
-        <mainContext.Provider value={{dataPokeList, setDataPokeList}}>
-            {children}
-        </mainContext.Provider>
-        </>
-    );
-}
+  return (
+    <>
+      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType }}>
+        {children}
+      </mainContext.Provider>
+    </>
+  );
+};
 
 export default MainProvider;
