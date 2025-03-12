@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (  
-        <header className="bg-blue-200 py-6 px-7">
+        <header className="py-6 px-7">
             <Link to="/">
                 <img src="/logo.png" alt="Pokemon Logo" className="w-3/4 mx-auto mb-5" />
             </Link>

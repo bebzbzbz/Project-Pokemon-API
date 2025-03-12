@@ -23,7 +23,7 @@ const Home = () => {
     }, [])
 
     return (  
-        <section className="grid grid-cols-2 gap-x-5 gap-y-10  bg-blue-200 p-7">
+        <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
             {
                 dataPokeList ?
                 dataPokeList.map((singlePoke: ListPoke) => {
