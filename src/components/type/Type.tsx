@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { TType } from "../../interfaces/interfaces";
 import { useContext } from "react";
+import { mainContext } from "../../context/MainProvider";
 
 //Props für Kommunikation zwischen hier und Selection
 interface ITypeProps {
@@ -12,6 +13,8 @@ interface ITypeProps {
 const Type = ({dataType}: ITypeProps) => {
 
 const {singleType, setSingleType} = useContext(mainContext) as any
+
+
 
     return ( 
     <>
