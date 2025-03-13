@@ -153,13 +153,8 @@ export interface Mfe {
 // }
 
 export interface Pokemony {
-  pokemon: Pokemon2
+  pokemon: ListPoke
   slot: number
-}
-
-export interface Pokemon2 {
-  name: string
-  url: string
 }
 
 // export interface Sprites {

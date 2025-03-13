@@ -9,6 +9,7 @@ const Selection = () => {
 
     //daten für fetchen der type Seite
   const { dataTypes, setDataTypes } = useContext(mainContext) as any;
+  const {setCatchDataType} = useContext(mainContext) as any
 
   //type fetch
   useEffect(() => {
@@ -17,6 +18,7 @@ const Selection = () => {
         const response = await axios.get("https://pokeapi.co/api/v2/type/");
         if (response) {
           setDataTypes(response.data.results);
+          setCatchDataType(dataTypes)
         }
       } catch (error) {
         console.log(error);
@@ -25,8 +27,7 @@ const Selection = () => {
     fetchData();
   }, []);
 
-
-
+  
 
   return (
     <>
