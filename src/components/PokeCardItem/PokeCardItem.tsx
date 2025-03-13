@@ -1,4 +1,5 @@
 import { Pokemon } from "../../interfaces/interfaces";
+import Type from "../type/Type";
 
 interface PokeCardItemProps {
     pokemon: Pokemon;
@@ -28,7 +29,11 @@ const PokeCardItem = ({pokemon} : PokeCardItemProps) => {
             <h1>#{pokeId} {pokeName}
                 <span>#{pokeId} {pokeName}</span>
             </h1>
-            {pokemon.types.map((type) => {return <button>{type.type.name}</button>})}
+
+            {pokemon.types.map((type) => {
+                return <Type dataType={type.type}/>})}
+
+            <h2>ATTACKS AND MOVEMENTS</h2>
         </section>
     );
 }
