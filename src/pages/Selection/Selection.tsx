@@ -49,18 +49,12 @@ const Selection = () => {
       <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
       </div>
 
-      <section className="grid grid-cols-2 gap-2 px-10 py-8 justify-items-center">
+      <section className="grid grid-cols-2 gap-2 px-10 py-8 pb-37 justify-items-center">
         {dataTypes.map((dataType: TType, index: number) => (
           <div key={index}>
             <Type dataType={dataType} />
           </div>
         ))}
-      </section>
-      {/* pt-63 weil Bild nicht komplett grau war und ich keine Ahnung habe warum */}
-      <section className=" flex justify-center pb-10 lg:pt-23 md:pt-63">
-        <button className="bg-poke-yellow px-8 py-3 border-4 rounded-lg border-poke-blue text-poke-blue font-bold">
-          SEARCH
-        </button>
       </section>
     </>
   );
