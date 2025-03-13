@@ -10,6 +10,8 @@ interface MainContextProps {
   setDark: (dark: boolean) => void
   dataTypes: TType[]
   setDataTypes: (dataTypes: TType[]) => void
+  searchName: string
+  setSearchName: (searchName: string) => void
 }
 
 export const mainContext = createContext<MainContextProps | null>(null);

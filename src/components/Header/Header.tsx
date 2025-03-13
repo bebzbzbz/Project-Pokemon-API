@@ -4,7 +4,8 @@ import { mainContext } from "../../context/MainProvider";
 
 interface IDarkModeToggleProps {
     dark: boolean,
-    setDark: (dark: boolean) => void
+    setDark: (dark: boolean) => void,
+    setSearchName: (searchName: string) => void
 }
 
 const Header = () => {

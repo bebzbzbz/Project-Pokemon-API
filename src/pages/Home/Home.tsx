@@ -7,6 +7,7 @@ import SinglePoke from "../../components/SinglePoke/SinglePoke";
 interface IDataPokeListProps {
     dataPokeList: ListPoke[],
     setDataPokeList: (dataPokeList: ListPoke[]) => void
+    searchName: string
 }
 
 const Home = () => {
