@@ -1,7 +1,18 @@
 import { createContext, useState } from "react";
 import { ISingleType, ListPoke, TType } from "../interfaces/interfaces";
 
-export const mainContext = createContext({}) as any;
+interface MainContextProps {
+  dataPokeList: ListPoke[]
+  setDataPokeList: (dataPokeList: ListPoke[]) => void
+  singleType: ISingleType | null
+  setSingleType: (singelType: ISingleType) => void 
+  dark: boolean
+  setDark: (dark: boolean) => void
+  dataTypes: TType[]
+  setDataTypes: (dataTypes: TType[]) => void
+}
+
+export const mainContext = createContext<MainContextProps | null>(null);
 
 const MainProvider = ({ children }: { children: React.ReactNode }) => {
     //useState für fetch mit Liste 20 Pokes

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
 
+
+
 const PokeCard = () => {
     const {pokeParam} = useParams();
     const [pokeCard, setPokeCard] = useState<Pokemon>()
@@ -26,7 +28,7 @@ const PokeCard = () => {
     
     return (  
         <>
-            {pokeCard ? <PokeCardItem key={crypto.randomUUID()} pokemon={pokeCard}/> : <p>Loading..</p>}
+            {pokeCard ? <PokeCardItem key={crypto.randomUUID()} pokemon={pokeCard}/> : <p>Loading...</p>}
         </>
     );
 }

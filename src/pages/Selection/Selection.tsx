@@ -5,11 +5,17 @@ import Type from "../../components/type/Type";
 import { TType } from "../../interfaces/interfaces";
 import { Link, useParams } from "react-router-dom";
 
+interface IPropsDataTypes {
+  dataTypes: TType[]
+  setDataTypes: (dataTypes: TType[]) => void
+}
+
+
 const Selection = () => {
 
     //daten für fetchen der type Seite
-  const { dataTypes, setDataTypes } = useContext(mainContext) as any;
-  const {setCatchDataType} = useContext(mainContext) as any
+  const { dataTypes, setDataTypes } = useContext(mainContext) as IPropsDataTypes;
+  
 
   //type fetch
   useEffect(() => {
@@ -18,7 +24,7 @@ const Selection = () => {
         const response = await axios.get("https://pokeapi.co/api/v2/type/");
         if (response) {
           setDataTypes(response.data.results);
-          setCatchDataType(dataTypes)
+
         }
       } catch (error) {
         console.log(error);
@@ -40,7 +46,7 @@ const Selection = () => {
         </Link>
       </header>
       <div className=" flex justify-center">
-        <img src="../../../public/images/TYPE.png" alt="TYPE" />
+      <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
       </div>
 
       <section className="grid grid-cols-2 gap-2 px-10 py-8 justify-items-center">

@@ -1,12 +1,17 @@
 import { useContext, useEffect } from "react";
 import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
-import { ListPoke } from "../../interfaces/interfaces";
+import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
+
+interface IDataPokeListProps {
+    dataPokeList: ListPoke[],
+    setDataPokeList: (dataPokeList: ListPoke[]) => void
+}
 
 const Home = () => {
 
-    const {dataPokeList, setDataPokeList} = useContext(mainContext) as any
+    const {dataPokeList, setDataPokeList} = useContext(mainContext) as IDataPokeListProps
 
     useEffect(()=> {
         const fetchData = async () => {

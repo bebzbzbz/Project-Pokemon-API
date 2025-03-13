@@ -2,16 +2,20 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
-import { Pokemony, } from "../../interfaces/interfaces";
+import { ISingleType, Pokemony, TType, } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
 
+interface ISingleTypeProps {
+    singleType: ISingleType
+    setSingleType: (singleType: ISingleType) => void
+}
 
 
 const PokeListType = () => {
     //hier entsteht Magie zwischen Linkt to={} aus Type.tsx und dem useParams--> haben dann densleben Inhalt
     const {typeParam} = useParams();
 
-    const {singleType, setSingleType} = useContext(mainContext) as any
+    const {singleType, setSingleType} = useContext(mainContext) as ISingleTypeProps
 
     useEffect(()=> {
       const fetchData = async () => {
