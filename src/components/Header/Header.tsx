@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 
 const Header = () => {
-    const {dark, setDark} = useContext(mainContext) as any
+    const {dark, setDark, setSearchName} = useContext(mainContext) as any
 
     const darkLightToggle = () => {
         setDark(!dark)
@@ -12,6 +12,18 @@ const Header = () => {
     const location = useLocation()
     const homeMenu = location.pathname === "/"
     const navigate = useNavigate()
+
+    const nameSearchRef = useRef<HTMLInputElement>(null)
+
+    const handleInputSearch = () => {
+        setSearchName(nameSearchRef.current?.value.toLowerCase() || "")
+    }
+
+    const resetSearchName = () => {
+        if(nameSearchRef.current) {
+            nameSearchRef.current.value = ""
+        }
+    }
 
     return (  
         <header className="py-6 px-7">
@@ -25,11 +37,15 @@ const Header = () => {
                     </Link>
                     : 
                     <img onClick={()=> navigate(-1)} src="/images/back.svg" alt="Back Arrow" />
-                    
                 }
                 
-                <input className="bg-gray-100 py-1 px-4 rounded-full" type="text" placeholder="Search Pokémon" />
-                <img src="/images/darklight-toggle.svg" alt="Dark/Light Mode" onClick={darkLightToggle}/>
+                <input className="bg-gray-100 py-1 px-4 rounded-full" 
+                    type="text" 
+                    placeholder="Search Pokémon" 
+                    onChange={handleInputSearch} 
+                    ref={nameSearchRef}/>
+                <img src="/images/darklight-toggle.svg" alt="Dark/Light Mode" 
+                    onClick={darkLightToggle}/>
             </nav>
         </header>
     );

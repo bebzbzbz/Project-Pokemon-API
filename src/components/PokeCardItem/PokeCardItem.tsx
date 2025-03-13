@@ -21,7 +21,6 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
       pokeId = pokemon.id.toString();
   }
 
-  console.log(pokemon.moves);
   return (
     <section className=" flex flex-col items-center pt-5">
       <div className="card-bg relative rounded-2xl flex justify-center h-23 w-2/3 mb-3">
@@ -44,7 +43,7 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
         ))}
       </div>
 
-      <h2 className="mb-5">MOVEMENTS</h2>
+      <h2 className="mb-5">MOVEMENTS <span>MOVEMENTS</span></h2>
       <article className="grid grid-cols-2 gap-3 justify-items-center">
         {pokemon.moves.map((move, index) => (
           <p className="w-35 h-8 lg:w-40 lg:h-12 card-bg text-center rounded-xl py-1 text-poke-blue" key={index}>{move.move.name}</p>

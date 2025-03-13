@@ -43,21 +43,26 @@ main.dark-mode {
 
 main.dark-mode .card-bg {
     background: linear-gradient(70deg, #BFDFFF 3%, #001224 95%);
+    color: #fff;
 }
 
 h1, h2 {
     color: var(--color-poke-yellow);
     font-weight: 900;
+    position: relative;
+    -webkit-text-stroke-color: #2C72B8;
 }
 
 h1 {
     font-size: 30px;
-    position: relative;
     -webkit-text-stroke-width: 8px;
-    -webkit-text-stroke-color: #2C72B8;
 }
 
-h1 span {
+h2 {
+    -webkit-text-stroke-width: 4px;
+}
+
+h1 span, h2 span {
     position: absolute;
     left: 0;
     -webkit-text-stroke: 0;
@@ -68,9 +73,6 @@ h1 span {
     left: 50%;
     transform: translateX(-50%)
 }
-
-
-
 
 .card-bg {
     background: linear-gradient(70deg, #FFE1C6 3%, var(--color-poke-yellow) 80%);
