@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 
 interface SinglePokeProps {
     pokemonFromList: ListPoke;
+    lastStepFilteredPokes: ListPoke[]
 }
 
-const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
+const SinglePoke = ({pokemonFromList, lastStepFilteredPokes} : SinglePokeProps) => {
     const [singlePoke, setSinglePoke] = useState<Pokemon>()
+
+    // console.log(lastStepFilteredPokes);
 
     useEffect(()=> {
         const fetchData = async () => {

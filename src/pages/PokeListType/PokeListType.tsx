@@ -2,12 +2,15 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
-import { ISingleType, Pokemony, TType, } from "../../interfaces/interfaces";
+import { ISingleType, ListPoke, Pokemony, TType, } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
 
 interface ISingleTypeProps {
     singleType: ISingleType
     setSingleType: (singleType: ISingleType) => void
+    searchName: string
+    setDataTypes: (dataTypes: TType[]) => void
+    setTest: (item: unknown) => void
 }
 
 
@@ -15,7 +18,7 @@ const PokeListType = () => {
     //hier entsteht Magie zwischen Linkt to={} aus Type.tsx und dem useParams--> haben dann densleben Inhalt
     const {typeParam} = useParams();
 
-    const {singleType, setSingleType} = useContext(mainContext) as ISingleTypeProps
+    const {singleType, setSingleType, searchName, setTest} = useContext(mainContext) as ISingleTypeProps
 
     useEffect(()=> {
       const fetchData = async () => {
@@ -23,6 +26,7 @@ const PokeListType = () => {
               const response = await axios.get(`https://pokeapi.co/api/v2/type/${typeParam}`)
               if (response) {
                   setSingleType(response.data)
+                //   console.log(response.data);
               }
           } catch (error) {
               console.log(error);
@@ -31,7 +35,20 @@ const PokeListType = () => {
       fetchData()
   }, [])
 
-  console.log(singleType);
+//   console.log(singleType);
+
+
+     // search Funktion!
+  let lastStepFilteredPokes: TType[] = []
+
+                      if(searchName != "") {
+                        
+                          const filteredPokes = singleType.pokemon.map((singlePokemon: Pokemony) => singlePokemon.pokemon )
+                        
+                         lastStepFilteredPokes = filteredPokes.filter((singlePoke: ListPoke) => singlePoke.name.includes(searchName))
+                      }
+
+                     console.log(lastStepFilteredPokes);
 
     return ( 
 <>
@@ -39,7 +56,7 @@ const PokeListType = () => {
     <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
       {singleType ? singleType?.pokemon.map((pokemon: Pokemony) => (
 
-            <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
+            <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()} lastStepFilteredPokes={lastStepFilteredPokes}/>
       )) : <p>Loading</p>}
     
     </section>

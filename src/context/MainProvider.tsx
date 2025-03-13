@@ -12,6 +12,8 @@ interface MainContextProps {
   setDataTypes: (dataTypes: TType[]) => void
   searchName: string
   setSearchName: (searchName: string) => void
+  test:ListPoke[]
+  setTest: (test: ListPoke[]) => void
 }
 
 export const mainContext = createContext<MainContextProps | null>(null);
@@ -32,9 +34,15 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
   //useState für die InputSearchFunction
   const [searchName, setSearchName] = useState<string>("")
 
+
+  // !
+
+  const [test,setTest] = useState<TType[]>([])
+  console.log(test);
+
   return (
     <>
-      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName}}>
+      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName, test, setTest}}>
         {children}
       </mainContext.Provider>
     </>
