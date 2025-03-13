@@ -28,9 +28,7 @@ const Header = () => {
                 }
                 
                 <input className="bg-gray-100 py-1 px-4 rounded-full" type="text" placeholder="Search Pokémon" />
-                <Link to="" onClick={darkLightToggle}>
-                    <img src="/images/darklight-toggle.svg" alt="Dark/Light Mode" />
-                </Link>
+                <img src="/images/darklight-toggle.svg" alt="Dark/Light Mode" onClick={darkLightToggle}/>
             </nav>
         </header>
     );

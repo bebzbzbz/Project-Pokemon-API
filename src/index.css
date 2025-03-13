@@ -27,10 +27,39 @@
     --color-unknown: #5498FF
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
 main {
     background-color: #ccdadd;
+    font-family: "Roboto", sans-serif;
 }
 
 main.dark-mode {
     background-color: #05070f;
+}
+
+main.dark-mode .card-bg {
+    background: linear-gradient(70deg, #BFDFFF 3%, #001224 95%);
+}
+
+h1 {
+    color: var(--color-poke-yellow);
+    font-size: 30px;
+    font-weight: 900;
+    position: relative;
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: #2C72B8;
+}
+
+h1 span {
+    position: absolute;
+    left: 0;
+    -webkit-text-stroke: 0;
+}
+
+.card-bg {
+    background: linear-gradient(70deg, #FFE1C6 3%, var(--color-poke-yellow) 80%);
 }

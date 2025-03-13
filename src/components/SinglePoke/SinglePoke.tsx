@@ -45,7 +45,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
 
     return (  
         <Link to={`${singlePoke?.name}`} className="flex flex-col">
-            <div className="relative bg-linear-to-tr from-yellow-200 to-amber-500 rounded-t-2xl flex justify-center h-23">
+            <div className="card-bg relative rounded-t-2xl flex justify-center h-23">
                 <img className="-mt-3 h-full" src={singlePoke?.sprites.other.showdown.front_default} alt={singlePoke?.name}/>
             </div>
             <ul className="bg-white rounded-b-2xl flex justify-between px-3 py-1">
