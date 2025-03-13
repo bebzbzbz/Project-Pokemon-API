@@ -39,7 +39,7 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
 
       <div className="flex flex-col gap-5 mb-10">
         {pokemon.types.map((type) => (
-          <Type dataType={type.type} />
+          <Type dataType={type.type} key={crypto.randomUUID()}/>
         ))}
       </div>
 
