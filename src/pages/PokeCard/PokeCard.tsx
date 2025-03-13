@@ -9,7 +9,6 @@ import axios from "axios";
 const PokeCard = () => {
     const {pokeParam} = useParams();
     const [pokeCard, setPokeCard] = useState<Pokemon>()
-    console.log(pokeParam);
 
     useEffect(()=> {
         const fetchData = async () => {
@@ -17,7 +16,6 @@ const PokeCard = () => {
                 const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeParam}`)
                 if (response) {
                     setPokeCard(response.data)
-                    console.log(response.data);
                 }
             } catch (error) {
                 console.log(error);

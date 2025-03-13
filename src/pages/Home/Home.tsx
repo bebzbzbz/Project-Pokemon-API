@@ -10,22 +10,27 @@ interface IDataPokeListProps {
 }
 
 const Home = () => {
-
-    const {dataPokeList, setDataPokeList} = useContext(mainContext) as IDataPokeListProps
+    const {dataPokeList, setDataPokeList, searchName} = useContext(mainContext) as IDataPokeListProps
 
     useEffect(()=> {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://pokeapi.co/api/v2/pokemon/")
+                const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151")
                 if (response) {
                     setDataPokeList(response.data.results)
+
+                    // search Funktion!
+                    if(searchName != "") {
+                        const filteredPokes = dataPokeList.filter((singlePokemon: ListPoke) => singlePokemon.name.includes(searchName))
+                        setDataPokeList(filteredPokes)
+                    }
                 }
             } catch (error) {
                 console.log(error);
             }
         }
         fetchData()
-    }, [])
+    }, [searchName])
 
     return (  
         <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
@@ -34,7 +39,7 @@ const Home = () => {
                 dataPokeList.map((singlePoke: ListPoke) => {
                     return <SinglePoke key={singlePoke.name} pokemonFromList={singlePoke} />;
                 }
-            ): <p>Hmmm</p>}
+            ): <p>Loading</p>}
         </section>
     );
 }

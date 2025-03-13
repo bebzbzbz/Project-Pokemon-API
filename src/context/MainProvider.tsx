@@ -27,9 +27,12 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
   //useState zum Togglen des light/dark modus
   const [dark, setDark] = useState<boolean>(false)
 
+  //useState für die InputSearchFunction
+  const [searchName, setSearchName] = useState<string>("")
+
   return (
     <>
-      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark}}>
+      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName}}>
         {children}
       </mainContext.Provider>
     </>

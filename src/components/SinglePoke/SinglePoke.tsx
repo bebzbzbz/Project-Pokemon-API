@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 interface SinglePokeProps {
-    pokemonFromList: ListPoke
+    pokemonFromList: ListPoke;
 }
 
 const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
@@ -40,7 +40,6 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
                 pokeId = (singlePoke.id)?.toString()
         }
     }
-
 
     return (  
         <Link to={`/${singlePoke?.name}`} className="flex flex-col">
