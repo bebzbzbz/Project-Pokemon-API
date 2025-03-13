@@ -25,8 +25,8 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
     <section className=" flex flex-col items-center pt-5">
       <div className="card-bg relative rounded-2xl flex justify-center h-23 w-2/3 mb-3">
         <img
-          className="-mt-3 h-full"
-          src={pokemon.sprites.other.showdown.front_default}
+          className={`${pokemon.sprites.other.showdown.front_default ? "-mt-3 h-full" : "h-25 -mt-7"}`}
+          src={pokemon.sprites.other.showdown.front_default ? pokemon.sprites.other.showdown.front_default : pokemon.sprites.other.home.front_default}
           alt={pokeName}
         />
       </div>
