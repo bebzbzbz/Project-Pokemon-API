@@ -16,7 +16,6 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
                 const response = await axios.get(pokemonFromList.url)
                 if (response) {
                     setSinglePoke(response.data)
-                    console.log(response);
                 }
             } catch (error) {
                 console.log(error);
@@ -28,7 +27,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
     let pokename : string = "";
     let pokeId : string = ""
     if(singlePoke) {
-        pokename = (singlePoke?.name).slice(0,1).toUpperCase() + (singlePoke?.name)?.slice(1)
+        pokename = (singlePoke?.name)?.slice(0,1).toUpperCase() + (singlePoke?.name)?.slice(1)
 
         switch(true) {
             case singlePoke.id < 10: 
@@ -38,7 +37,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
                 pokeId = "0" + singlePoke.id
                 break;
             default:
-                pokeId = (singlePoke.id).toString()
+                pokeId = (singlePoke.id)?.toString()
         }
     }
 
@@ -48,7 +47,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
             <div className="card-bg relative rounded-t-2xl flex justify-center h-23">
                 <img className="-mt-3 h-full" src={singlePoke?.sprites.other.showdown.front_default} alt={singlePoke?.name}/>
             </div>
-            <ul className="bg-white rounded-b-2xl flex justify-between px-3 py-1">
+            <ul className="bg-white rounded-b-2xl flex justify-between px-3 py-1 text-right">
                 <li>#{pokeId}</li>
                 <li>{pokename}</li>
             </ul>

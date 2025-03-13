@@ -11,29 +11,24 @@ interface ITypeProps {
 
 const Type = ({dataType}: ITypeProps) => {
 
-const {singleType, setSingleType} = useContext(mainContext) as any
+// const {singleType, setSingleType} = useContext(mainContext) as any
 
-useEffect(()=> {
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(dataType.url)
-            if (response) {
-                setSingleType(response.data)
-                console.log(response);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    fetchData()
-}, [])
+// useEffect(()=> {
+//     const fetchData = async () => {
+//         try {
+//             const response = await axios.get(dataType.url)
+//             if (response) {
+//                 setSingleType(response.data)
+//                 console.log(response);
+//             }
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     }
+//     fetchData()
+// }, [])
 
-console.log(dataType);
-
-//fetched mit 2 random ids
-console.log(singleType);
-
-
+// console.log(dataType);
 
     return ( 
     <>
