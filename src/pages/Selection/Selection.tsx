@@ -3,9 +3,10 @@ import { useContext, useEffect } from "react";
 import { mainContext } from "../../context/MainProvider";
 import Type from "../../components/type/Type";
 import { TType } from "../../interfaces/interfaces";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Selection = () => {
+
     //daten für fetchen der type Seite
   const { dataTypes, setDataTypes } = useContext(mainContext) as any;
 
@@ -23,6 +24,8 @@ const Selection = () => {
     };
     fetchData();
   }, []);
+
+
 
 
   return (
@@ -46,7 +49,8 @@ const Selection = () => {
           </div>
         ))}
       </section>
-      <section className=" flex justify-center pb-10 bg-">
+      {/* pt-63 weil Bild nicht komplett grau war und ich keine Ahnung habe warum */}
+      <section className=" flex justify-center pb-10 lg:pt-23 md:pt-63">
         <button className="bg-poke-yellow px-8 py-3 border-4 rounded-lg border-poke-blue text-poke-blue font-bold">
           SEARCH
         </button>
