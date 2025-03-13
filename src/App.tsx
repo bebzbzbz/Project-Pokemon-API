@@ -24,7 +24,7 @@ function App() {
   const { dark } = useContext(mainContext) as any
 
   return (
-    <main className={dark && `dark-mode`}>
+    <main className={`${dark && "dark-mode"} py-10`}>
       <RouterProvider router={router}/>
     </main>
   )

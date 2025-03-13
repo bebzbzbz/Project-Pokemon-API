@@ -27,13 +27,20 @@ const PokeListType = () => {
       fetchData()
   }, [])
 
-    return ( <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
+  console.log(singleType);
+
+    return ( 
+<>
+<h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
+    <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
       {singleType ? singleType?.pokemon.map((pokemon: Pokemony) => (
 
             <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
       )) : <p>Loading</p>}
     
-    </section>);
+    </section>
+</>
+    );
 }
 
 export default PokeListType;

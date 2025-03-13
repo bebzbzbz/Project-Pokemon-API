@@ -63,6 +63,13 @@ h1 span {
     -webkit-text-stroke: 0;
 }
 
+.span-type {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+
 
 
 .card-bg {

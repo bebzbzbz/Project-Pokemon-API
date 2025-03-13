@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 
 const Header = () => {
@@ -11,6 +11,7 @@ const Header = () => {
 
     const location = useLocation()
     const homeMenu = location.pathname === "/"
+    const navigate = useNavigate()
 
     return (  
         <header className="py-6 px-7">
@@ -22,9 +23,9 @@ const Header = () => {
                     <Link to="/selection">
                         <img src="/images/burgermenu.svg" alt="Burger Menu" />
                     </Link>
-                    : <Link to="/">
-                    <img src="/images/back.svg" alt="Back Arrow" />
-                    </Link>
+                    : 
+                    <img onClick={()=> navigate(-1)} src="/images/back.svg" alt="Back Arrow" />
+                    
                 }
                 
                 <input className="bg-gray-100 py-1 px-4 rounded-full" type="text" placeholder="Search Pokémon" />
