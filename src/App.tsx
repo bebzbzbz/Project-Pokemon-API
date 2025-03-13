@@ -6,11 +6,14 @@ import Selection from './pages/Selection/Selection'
 import { useContext } from 'react'
 import { mainContext } from './context/MainProvider'
 import PokeListType from './pages/PokeListType/PokeListType'
+import PokeCard from './pages/PokeCard/PokeCard'
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
       <Route index element={<Home/>}/>
+      <Route path="/:pokeParam" element={<PokeCard/>}/>
+
       <Route path="/selection" element={<Selection/>}/>
       <Route path="/selection/:typeParam" element={<PokeListType/>}/>
     </Route>

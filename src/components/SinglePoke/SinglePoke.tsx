@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 interface SinglePokeProps {
     pokemonFromList: ListPoke
@@ -43,7 +44,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
 
 
     return (  
-        <div className="flex flex-col">
+        <Link to={`${singlePoke?.name}`} className="flex flex-col">
             <div className="relative bg-linear-to-tr from-yellow-200 to-amber-500 rounded-t-2xl flex justify-center h-23">
                 <img className="-mt-3 h-full" src={singlePoke?.sprites.other.showdown.front_default} alt={singlePoke?.name}/>
             </div>
@@ -51,7 +52,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
                 <li>#{pokeId}</li>
                 <li>{pokename}</li>
             </ul>
-        </div>
+        </Link>
     );
 }
 

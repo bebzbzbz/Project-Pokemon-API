@@ -5,7 +5,8 @@ const PokeListType = () => {
     const {typeParam} = useParams();
     console.log(typeParam);
 
-    return ( <></> );
+    return ( <>
+    <h1>POKELISTTYPE</h1></> );
 }
  
 export default PokeListType;
