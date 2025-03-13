@@ -4,6 +4,7 @@ import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
 import { ISingleType, Pokemony, TType, } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
+import Loader from "../../components/Loader/Loader";
 
 interface ISingleTypeProps {
     singleType: ISingleType
@@ -18,32 +19,30 @@ const PokeListType = () => {
     const {singleType, setSingleType} = useContext(mainContext) as ISingleTypeProps
 
     useEffect(()=> {
-      const fetchData = async () => {
-          try {
-              const response = await axios.get(`https://pokeapi.co/api/v2/type/${typeParam}`)
-              if (response) {
-                  setSingleType(response.data)
-              }
-          } catch (error) {
-              console.log(error);
-          }
-      }
-      fetchData()
-  }, [])
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`https://pokeapi.co/api/v2/type/${typeParam}`)
+                if (response) {
+                    setSingleType(response.data)
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData()
+    }, [])
 
-  console.log(singleType);
+    console.log(singleType);
 
     return ( 
-<>
-<h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
-    <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
-      {singleType ? singleType?.pokemon.map((pokemon: Pokemony) => (
-
-            <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
-      )) : <p>Loading</p>}
-    
-    </section>
-</>
+        <>
+            <h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
+            <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
+                {singleType ? singleType?.pokemon.map((pokemon: Pokemony) => (
+                <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
+                )) : <Loader/>}
+            </section>
+        </>
     );
 }
 

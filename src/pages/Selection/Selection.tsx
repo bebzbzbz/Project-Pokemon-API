@@ -10,12 +10,10 @@ interface IPropsDataTypes {
   setDataTypes: (dataTypes: TType[]) => void
 }
 
-
 const Selection = () => {
 
     //daten für fetchen der type Seite
   const { dataTypes, setDataTypes } = useContext(mainContext) as IPropsDataTypes;
-  
 
   //type fetch
   useEffect(() => {
@@ -33,8 +31,6 @@ const Selection = () => {
     fetchData();
   }, []);
 
-  
-
   return (
     <>
       <header className=" flex items-center justify-between px-5 py-5">
@@ -49,7 +45,7 @@ const Selection = () => {
       <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
       </div>
 
-      <section className="grid grid-cols-2 gap-2 px-10 py-8 pb-37 justify-items-center">
+      <section className="grid grid-cols-2 gap-2 px-10 py-8 justify-items-center">
         {dataTypes.map((dataType: TType, index: number) => (
           <div key={index}>
             <Type dataType={dataType} />

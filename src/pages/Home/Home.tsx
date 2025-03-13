@@ -3,6 +3,7 @@ import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
 import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
+import Loader from "../../components/Loader/Loader";
 
 interface IDataPokeListProps {
     dataPokeList: ListPoke[],
@@ -40,7 +41,7 @@ const Home = () => {
                 dataPokeList.map((singlePoke: ListPoke) => {
                     return <SinglePoke key={singlePoke.name} pokemonFromList={singlePoke} />;
                 }
-            ): <p>Loading</p>}
+            ): <Loader/>}
         </section>
     );
 }
