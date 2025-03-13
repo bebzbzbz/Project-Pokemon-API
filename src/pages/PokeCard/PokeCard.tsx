@@ -3,6 +3,7 @@ import PokeCardItem from "../../components/PokeCardItem/PokeCardItem";
 import { useEffect, useState } from "react";
 import { Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
+import Loader from "../../components/Loader/Loader";
 
 
 
@@ -26,7 +27,7 @@ const PokeCard = () => {
     
     return (  
         <>
-            {pokeCard ? <PokeCardItem key={crypto.randomUUID()} pokemon={pokeCard}/> : <p>Loading...</p>}
+            {pokeCard ? <PokeCardItem key={crypto.randomUUID()} pokemon={pokeCard}/> : <Loader/>}
         </>
     );
 }

@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 
 interface IDarkModeToggleProps {
@@ -10,6 +10,7 @@ interface IDarkModeToggleProps {
 }
 
 const Header = () => {
+    const {pokeParam} = useParams();
     const {dark, setDark, searchName, setSearchName} = useContext(mainContext) as IDarkModeToggleProps
 
     const darkLightToggle = () => {
@@ -18,6 +19,7 @@ const Header = () => {
 
     const location = useLocation()
     const homeMenu = location.pathname === "/"
+    const hideSingleCardNav = location.pathname === `/${pokeParam}`
     const navigate = useNavigate()
 
     const nameSearchRef = useRef<HTMLInputElement>(null)
@@ -40,12 +42,16 @@ const Header = () => {
                     <img className="cursor-pointer" onClick={()=> navigate(-1)} src="/images/back.svg" alt="Back Arrow" />
                 }
                 
-                <input className="bg-gray-100 py-1 px-4 rounded-full" 
-                    type="text" 
-                    placeholder="Search Pokémon" 
-                    onChange={handleInputSearch} 
-                    ref={nameSearchRef}
-                    value={searchName}/>
+                {!hideSingleCardNav ?
+                    <input className="bg-gray-100 py-1 px-4 rounded-full" 
+                        type="text" 
+                        placeholder="Search Pokémon" 
+                        onChange={handleInputSearch} 
+                        ref={nameSearchRef}
+                        value={searchName}/>
+                    : ""}
+
+
 
                 <img className="cursor-pointer" src="/images/darklight-toggle.svg" alt="Dark/Light Mode" 
                     onClick={darkLightToggle}/>
