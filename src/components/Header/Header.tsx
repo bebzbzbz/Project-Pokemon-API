@@ -5,11 +5,12 @@ import { mainContext } from "../../context/MainProvider";
 interface IDarkModeToggleProps {
     dark: boolean,
     setDark: (dark: boolean) => void,
+    searchName: string,
     setSearchName: (searchName: string) => void
 }
 
 const Header = () => {
-    const {dark, setDark, setSearchName} = useContext(mainContext) as IDarkModeToggleProps
+    const {dark, setDark, searchName, setSearchName} = useContext(mainContext) as IDarkModeToggleProps
 
     const darkLightToggle = () => {
         setDark(!dark)
@@ -25,15 +26,9 @@ const Header = () => {
         setSearchName(nameSearchRef.current?.value.toLowerCase() || "")
     }
 
-    const resetSearchName = () => {
-        if(nameSearchRef.current) {
-            nameSearchRef.current.value = ""
-        }
-    }
-
     return (  
         <header className="py-6 px-7">
-            <Link to="/">
+            <Link to="/" onClick={() => setSearchName("")}>
                 <img src="/images/logo.png" alt="Pokemon Logo" className="w-3/4 mx-auto mb-5" />
             </Link>
             <nav className="flex justify-between">
@@ -49,7 +44,9 @@ const Header = () => {
                     type="text" 
                     placeholder="Search Pokémon" 
                     onChange={handleInputSearch} 
-                    ref={nameSearchRef}/>
+                    ref={nameSearchRef}
+                    value={searchName}/>
+
                 <img className="cursor-pointer" src="/images/darklight-toggle.svg" alt="Dark/Light Mode" 
                     onClick={darkLightToggle}/>
             </nav>
