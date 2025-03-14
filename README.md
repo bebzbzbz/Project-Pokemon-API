@@ -1,5 +1,8 @@
 # Pokemon API Team-Projekt
 
+[iPhone-13-PRO-localhost-s_i2brhje_ukck.webm](https://github.com/user-attachments/assets/33c52109-1f67-465f-845f-1ac223cd7344)
+
+
 Das "Pokémon API Project" wurde im Rahmen eines Teamprojekts entwickelt und bietet eine interaktive Anwendung, die es ermöglicht, Pokémon-Daten aus einer öffentlichen API abzurufen. Die Hauptfunktionen umfassen das Anzeigen von Pokémon auf der Startseite, die Möglichkeit, nach einem bestimmten Pokémon zu suchen, und eine detaillierte Ansicht jedes Pokémons, die zusätzliche Informationen wie Typen und Attacken umfasst.
 
 Die Anwendung wurde mit React entwickelt und implementiert eine benutzerfreundliche Navigation, die es den Nutzern ermöglicht, zwischen verschiedenen Ansichten und Pokémon-Detailseiten zu wechseln. Der Header enthält einen Dark/Light-Modus-Button, um die Benutzeroberfläche nach den Vorlieben des Nutzers anzupassen.
