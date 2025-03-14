@@ -2,21 +2,25 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loading from "../Loader/Loader";
+
 
 interface SinglePokeProps {
-    pokemonFromList: ListPoke;
-    lastStepFilteredPokes: ListPoke[]
+    pokemonFromList?: ListPoke;
+    filteredArray: Pokemon | Pokemon[]
+    lastStepFilteredPokes?: Pokemon
+
 }
 
-const SinglePoke = ({pokemonFromList, lastStepFilteredPokes} : SinglePokeProps) => {
+const SinglePoke = ({lastStepFilteredPokes, pokemonFromList} : SinglePokeProps) => {
     const [singlePoke, setSinglePoke] = useState<Pokemon>()
 
-    // console.log(lastStepFilteredPokes);
+
 
     useEffect(()=> {
         const fetchData = async () => {
             try {
-                const response = await axios.get(pokemonFromList.url)
+                const response = await axios.get(pokemonFromList?.url || "")
                 if (response) {
                     setSinglePoke(response.data)
                 }
@@ -45,7 +49,7 @@ const SinglePoke = ({pokemonFromList, lastStepFilteredPokes} : SinglePokeProps) 
     }
 
     return (  
-        <Link to={`/${singlePoke?.name}`} className="flex flex-col">
+        <>{singlePoke && ( <Link to={`/${singlePoke?.name}`} className="flex flex-col">
             <div className="card-bg relative rounded-t-2xl flex justify-center h-23">
                 <img className="h-full -mt-3" src={singlePoke?.sprites.other.showdown.front_default ? singlePoke?.sprites.other.showdown.front_default : singlePoke?.sprites.other.home.front_default} alt={singlePoke?.name}/>
             </div>
@@ -53,7 +57,18 @@ const SinglePoke = ({pokemonFromList, lastStepFilteredPokes} : SinglePokeProps) 
                 <li>#{pokeId}</li>
                 <li>{pokename}</li>
             </ul>
-        </Link>
+        </Link>)}
+        
+        {lastStepFilteredPokes?.id ? ( <Link to={`/${lastStepFilteredPokes?.name}`} className="flex flex-col">
+            <div className="card-bg relative rounded-t-2xl flex justify-center h-23">
+                <img className="h-full -mt-3" src={lastStepFilteredPokes?.sprites?.other?.showdown.front_default ? lastStepFilteredPokes?.sprites?.other?.showdown.front_default : lastStepFilteredPokes?.sprites?.other?.home.front_default} alt={lastStepFilteredPokes?.name}/>
+            </div>
+            <ul className="bg-white rounded-b-2xl flex justify-between px-3 py-1 text-right">
+                <li>#{pokeId}</li>
+                <li>{pokename}</li>
+            </ul>
+        </Link>) : (<Loading/>)}
+        </>
     );
 }
 

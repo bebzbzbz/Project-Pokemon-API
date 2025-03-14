@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { ISingleType, ListPoke, TType } from "../interfaces/interfaces";
+import { ISingleType, ListPoke, Pokemon, TType } from "../interfaces/interfaces";
 
 interface MainContextProps {
   dataPokeList: ListPoke[]
@@ -12,8 +12,8 @@ interface MainContextProps {
   setDataTypes: (dataTypes: TType[]) => void
   searchName: string
   setSearchName: (searchName: string) => void
-  test:ListPoke[]
-  setTest: (test: ListPoke[]) => void
+  filteredArray: Pokemon[]
+  setFilteredArray: (filteredArray: Pokemon[]) => void
 }
 
 export const mainContext = createContext<MainContextProps | null>(null);
@@ -35,14 +35,13 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
   const [searchName, setSearchName] = useState<string>("")
 
 
-  // !
+  const [filteredArray, setFilteredArray] = useState<Pokemon[]>([])
 
-  const [test,setTest] = useState<TType[]>([])
-  console.log(test);
+
 
   return (
     <>
-      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName, test, setTest}}>
+      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName, filteredArray, setFilteredArray}}>
         {children}
       </mainContext.Provider>
     </>
