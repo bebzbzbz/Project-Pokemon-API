@@ -1,4 +1,4 @@
-//type für Fetch der 20 Pokemons für Übersicht
+//type für Fetch der 20 Pokemons für Übersicht, für Type Fetch und Moves
 export interface ListPoke {
   name: string,
   url: string
@@ -8,14 +8,6 @@ export interface ListPoke {
 export interface Pokemon {
   id: number;
   name: string;
-  abilities: Array<{
-    is_hidden: boolean;
-    slot: number;
-    ability: {
-      name: string;
-      url: string;
-    };
-  }>;
   moves: Array<{
     move: {
       name: string;
@@ -67,23 +59,12 @@ export interface Pokemon {
   }>;
 };
 
-//interface für fetch Type
-export interface TType {
-  name: string,
-  url: string
-}
-
 //interface für verschachtelten fetch der einzelnen Types
 export interface ISingleType {
   id: number
   name: string
-  moves: Mfe[]
+  moves: ListPoke[]
   pokemon: Pokemony[]
-}
-
-export interface Mfe {
-  name: string
-  url: string
 }
 
 export interface Pokemony {
