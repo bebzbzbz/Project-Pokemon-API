@@ -11,7 +11,6 @@ interface ISingleTypeProps {
     setSingleType: (singleType: ISingleType) => void
 }
 
-
 const PokeListType = () => {
     //hier entsteht Magie zwischen Linkt to={} aus Type.tsx und dem useParams--> haben dann densleben Inhalt
     const {typeParam} = useParams();
@@ -35,18 +34,16 @@ const PokeListType = () => {
     console.log(singleType);
 
     return ( 
-        <>
-            <section>
-                <h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
-                {singleType ? 
-                        <article className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
-                            {singleType?.pokemon.map((pokemon: Pokemony) => (
-                            <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
-                        ))}
-                        </article>
-                        : <Loader/>}
-            </section>
-        </>
+        <section>
+            <h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
+            {singleType ? 
+                    <article className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
+                        {singleType?.pokemon.map((pokemon: Pokemony) => (
+                        <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
+                    ))}
+                    </article>
+                    : <Loader/>}
+        </section>
     );
 }
 

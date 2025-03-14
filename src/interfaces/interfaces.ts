@@ -79,7 +79,6 @@ export interface ISingleType {
   name: string
   moves: Mfe[]
   pokemon: Pokemony[]
-
 }
 
 export interface Mfe {
@@ -91,4 +90,3 @@ export interface Pokemony {
   pokemon: ListPoke
   slot: number
 }
-

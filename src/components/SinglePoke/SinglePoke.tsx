@@ -29,7 +29,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
     let pokename : string = "";
     let pokeId : string = ""
     if(singlePoke) {
-        pokename = (singlePoke?.name)?.slice(0,1).toUpperCase() + (singlePoke?.name)?.slice(1)
+        pokename = (singlePoke.name).slice(0,1).toUpperCase() + (singlePoke.name)?.slice(1)
 
         switch(true) {
             case singlePoke.id < 10: 
@@ -39,7 +39,7 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
                 pokeId = "0" + singlePoke.id
                 break;
             default:
-                pokeId = (singlePoke.id)?.toString()
+                pokeId = (singlePoke.id).toString()
         }
     }
 

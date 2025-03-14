@@ -11,7 +11,6 @@ interface IPropsDataTypes {
 }
 
 const Selection = () => {
-
     //daten für fetchen der type Seite
   const { dataTypes, setDataTypes } = useContext(mainContext) as IPropsDataTypes;
 
@@ -49,8 +48,6 @@ const Selection = () => {
               <TypeBtn dataType={dataType} key={crypto.randomUUID()}/>
           ))}
         </article>
-
-
       </section>
     </>
   );

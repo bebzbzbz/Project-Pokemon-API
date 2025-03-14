@@ -5,8 +5,6 @@ import { Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
 import Loader from "../../components/Loader/Loader";
 
-
-
 const PokeCard = () => {
     const {pokeParam} = useParams();
     const [pokeCard, setPokeCard] = useState<Pokemon>()
