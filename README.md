@@ -101,4 +101,4 @@ Das Design des Projekts basiert auf einer Figma-Vorlage, die als Grundlage für 
 ## Deployment
 
 Hier gelangst du direkt zur Webseite
-- [Hangman Game](https://hangman-game-seven-xi.vercel.app/)
+- [Pokemon API Team-Projekt](https://pokemon-api-duo-project.vercel.app/)
