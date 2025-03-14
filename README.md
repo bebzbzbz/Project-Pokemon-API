@@ -1,8 +1,8 @@
 # Pokemon API Team-Projekt
 
-Das "Pokémon API Project" wurde im Rahmen eines Teamprojekts entwickelt und bietet eine interaktive Anwendung, die es ermöglicht, Pokémon-Daten aus einer öffentlichen API abzurufen. Die Hauptfunktionen umfassen das Anzeigen von Pokémon auf der Startseite, die Möglichkeit, nach einem bestimmten Pokémon zu suchen, und eine detaillierte Ansicht jedes Pokémon, die zusätzliche Informationen wie Typen und "Movements" umfasst.
+Das "Pokémon API Project" wurde im Rahmen eines Teamprojekts entwickelt und bietet eine interaktive Anwendung, die es ermöglicht, Pokémon-Daten aus einer öffentlichen API abzurufen. Die Hauptfunktionen umfassen das Anzeigen von Pokémon auf der Startseite, die Möglichkeit, nach einem bestimmten Pokémon zu suchen, und eine detaillierte Ansicht jedes Pokémons, die zusätzliche Informationen wie Typen und Attacken umfasst.
 
-Die Anwendung wurde mit React und React Router DOM entwickelt und implementiert eine benutzerfreundliche Navigation, die es den Nutzern ermöglicht, zwischen verschiedenen Ansichten und Pokémon-Detailseiten zu wechseln. Der Header enthält einen Dark/Light-Modus-Button, um die Benutzeroberfläche nach den Vorlieben des Nutzers anzupassen.
+Die Anwendung wurde mit React entwickelt und implementiert eine benutzerfreundliche Navigation, die es den Nutzern ermöglicht, zwischen verschiedenen Ansichten und Pokémon-Detailseiten zu wechseln. Der Header enthält einen Dark/Light-Modus-Button, um die Benutzeroberfläche nach den Vorlieben des Nutzers anzupassen.
 
 ## Table of Contents 
 
@@ -39,7 +39,7 @@ Navigation:
 - Von der Typenübersicht aus kann der Nutzer wieder zur Detailansicht eines Pokémon wechseln
 
 ### Teamarbeit
-Dieses Projekt wurde als Teamarbeit durchgeführt. Wir haben regelmäßig über Discord kommuniziert, um Aufgaben zu verteilen, Fortschritte zu besprechen und den Entwicklungsfortschritt zu koordinieren. Mit Git als Versionierungstool haben wir sicherstellt, dass alle Änderungen zusammengeführt (mergiert), gepusht und gepullt werden, um einen reibungslosen Ablauf zu gewährleisten.
+Dieses Projekt wurde als Teamarbeit durchgeführt. Wir haben regelmäßig über Discord kommuniziert, um Aufgaben zu verteilen, Fortschritte zu besprechen und den Entwicklungsfortschritt zu koordinieren. Zusätzlich haben wir FigJam genutzt, um unsere Aufgaben zu visualisieren und sie zu verteilen. Mit Git als Version Control Tool haben wir sichergestellt, dass alle Änderungen gemerged, gepusht und gepullt werden, um einen reibungslosen Ablauf zu gewährleisten.
 
 ## Tech Stack
 
@@ -50,23 +50,23 @@ Dieses Projekt wurde als Teamarbeit durchgeführt. Wir haben regelmäßig über 
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)  
 
-**Überschrift:**<br/>
+**JS Library:**<br/>
 ![React](https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white)
 
-**Überschrift**<br/>
+**Routing**<br/>
 ![React Router DOM](https://img.shields.io/badge/React_Router_DOM-%23CA4245.svg?style=for-the-badge&logo=react-router&logoColor=white)
 
 **IDE:**  
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)  
 
-**TS:**<br/>
-![Javascript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
+**Programming Language:**<br/>
+![Typescript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)
 
 **Version Control:**  
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)  
 
 
-## Getting Startet
+## Getting Started
 
 Hier ist eine Anleitung, wie du das "Pokemon API"-Projekt auf deinem lokalen Rechner einrichtest und ausführst:
 
@@ -79,7 +79,7 @@ Folgende Programme solltest du installiert haben:
 - [Vite](https://v5.vite.dev/guide/)
 - [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite)
 - [React-Router-Dom](https://reactrouter.com/start/library/installation)
-- [Axios] (https://axios-http.com/docs/intro)
+- [Axios](https://axios-http.com/docs/intro)
 
 ### Installation
 
@@ -92,7 +92,7 @@ Folgende Programme solltest du installiert haben:
 
 2. **Öffne das Projekt und installiere Vite,Tailwind Css, React-Router-Dom und Axios, indem du den Instruktionen auf den oben verlinkten Webseiten folgst :**
  
-**Alles ist eingerichtet! Nun kannst du das "Pokemon-API"-Projekt erkunden und nach deinen Lieblings Pokemon suchen.
+**Alles ist eingerichtet! Nun kannst du das "Pokemon-API"-Projekt erkunden und nach deinen Lieblings Pokemon der ersten Generation suchen.
 
 ## Design
 
