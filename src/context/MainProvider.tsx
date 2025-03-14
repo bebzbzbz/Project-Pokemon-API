@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { ISingleType, ListPoke, TType } from "../interfaces/interfaces";
+import { ISingleType, ListPoke } from "../interfaces/interfaces";
 
 interface MainContextProps {
   dataPokeList: ListPoke[]
@@ -8,8 +8,8 @@ interface MainContextProps {
   setSingleType: (singelType: ISingleType) => void 
   dark: boolean
   setDark: (dark: boolean) => void
-  dataTypes: TType[]
-  setDataTypes: (dataTypes: TType[]) => void
+  dataTypes: ListPoke[]
+  setDataTypes: (dataTypes: ListPoke[]) => void
   searchName: string
   setSearchName: (searchName: string) => void
 }
@@ -21,7 +21,7 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
     const [dataPokeList, setDataPokeList] = useState<ListPoke[]>([]);
 
   //useState für fetch der Types
-  const [dataTypes, setDataTypes] = useState<TType[]>([])
+  const [dataTypes, setDataTypes] = useState<ListPoke[]>([])
 
   //useState für fetch der einzelnen Types
   const [singleType, setSingleType] = useState<ISingleType | null>(null)
