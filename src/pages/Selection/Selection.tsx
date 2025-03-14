@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useContext, useEffect } from "react";
 import { mainContext } from "../../context/MainProvider";
-import Type from "../../components/type/Type";
 import { TType } from "../../interfaces/interfaces";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import TypeBtn from "../../components/TypeBtn/TypeBtn";
 
 interface IPropsDataTypes {
   dataTypes: TType[]
@@ -41,16 +41,16 @@ const Selection = () => {
           <img src="../../../public/images/Vector.png" alt="X" />
         </Link>
       </header>
-      <div className=" flex justify-center">
-      <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
-      </div>
 
-      <section className="grid grid-cols-2 gap-2 px-10 py-8 justify-items-center">
-        {dataTypes.map((dataType: TType, index: number) => (
-          <div key={index}>
-            <Type dataType={dataType} />
-          </div>
-        ))}
+      <section className="flex flex-col items-center">
+        <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
+        <article className="grid grid-cols-2 gap-4 px-10 pt-8">
+          {dataTypes.map((dataType: TType) => (
+              <TypeBtn dataType={dataType} key={crypto.randomUUID()}/>
+          ))}
+        </article>
+
+
       </section>
     </>
   );

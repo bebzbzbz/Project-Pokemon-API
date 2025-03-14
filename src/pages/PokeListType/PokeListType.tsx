@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
-import { ISingleType, Pokemony, TType, } from "../../interfaces/interfaces";
+import { ISingleType, Pokemony, } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
 import Loader from "../../components/Loader/Loader";
 
@@ -36,11 +36,15 @@ const PokeListType = () => {
 
     return ( 
         <>
-            <h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
-            <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
-                {singleType ? singleType?.pokemon.map((pokemon: Pokemony) => (
-                <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
-                )) : <Loader/>}
+            <section>
+                <h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
+                {singleType ? 
+                        <article className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
+                            {singleType?.pokemon.map((pokemon: Pokemony) => (
+                            <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
+                        ))}
+                        </article>
+                        : <Loader/>}
             </section>
         </>
     );

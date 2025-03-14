@@ -1,5 +1,5 @@
 import { Pokemon } from "../../interfaces/interfaces";
-import Type from "../type/Type";
+import TypeBtn from "../TypeBtn/TypeBtn";
 
 interface PokeCardItemProps {
   pokemon: Pokemon;
@@ -23,7 +23,7 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
 
   return (
     <section className=" flex flex-col items-center">
-      <div className="card-bg relative rounded-2xl flex justify-center h-23 w-2/3 mb-3">
+      <div className="card-bg relative rounded-2xl flex justify-center h-23 w-1/2 mb-3">
         <img
           className={`${pokemon.sprites.other.showdown.front_default ? "-mt-3 h-full" : "h-25 -mt-7"}`}
           src={pokemon.sprites.other.showdown.front_default ? pokemon.sprites.other.showdown.front_default : pokemon.sprites.other.home.front_default}
@@ -39,14 +39,16 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
 
       <div className="flex flex-col gap-5 mb-10">
         {pokemon.types.map((type) => (
-          <Type dataType={type.type} key={crypto.randomUUID()}/>
+          <TypeBtn dataType={type.type} key={crypto.randomUUID()}/>
         ))}
       </div>
 
       <h2 className="mb-5">MOVEMENTS <span>MOVEMENTS</span></h2>
       <article className="grid grid-cols-2 gap-3 justify-items-center">
-        {pokemon.moves.map((move, index) => (
-          <p className="w-35 h-8 lg:w-40 lg:h-12 card-bg text-center rounded-xl py-1 text-poke-blue" key={index}>{move.move.name}</p>
+        {pokemon.moves.map((move) => (
+          <p className="w-35 h-8 lg:w-40 lg:h-12 card-bg text-center rounded-xl py-1 text-poke-blue" key={crypto.randomUUID()}>
+            {move.move.name.includes("-") ? move.move.name.replace("-", " ").toUpperCase() : move.move.name.toUpperCase()}
+            </p>
         ))}
       </article>
     </section>

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { mainContext } from "../../context/MainProvider";
 import axios from "axios";
-import { ListPoke, Pokemon } from "../../interfaces/interfaces";
+import { ListPoke } from "../../interfaces/interfaces";
 import SinglePoke from "../../components/SinglePoke/SinglePoke";
 import Loader from "../../components/Loader/Loader";
 
@@ -35,7 +35,7 @@ const Home = () => {
     }, [searchName])
 
     return (  
-        <section className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
+        <section className="grid grid-cols-2 gap-x-5 gap-y-10 px-7 mt-12 mb-5">
             {
                 dataPokeList ?
                 dataPokeList.map((singlePoke: ListPoke) => {

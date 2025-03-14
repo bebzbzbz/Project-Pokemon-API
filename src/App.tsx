@@ -9,8 +9,6 @@ import PokeListType from './pages/PokeListType/PokeListType'
 import PokeCard from './pages/PokeCard/PokeCard'
 
 function App() {
-
-
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
       <Route index element={<Home/>}/>
