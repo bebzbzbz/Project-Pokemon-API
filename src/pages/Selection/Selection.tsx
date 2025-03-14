@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useContext, useEffect } from "react";
 import { mainContext } from "../../context/MainProvider";
-import { TType } from "../../interfaces/interfaces";
+import { ListPoke } from "../../interfaces/interfaces";
 import { Link } from "react-router-dom";
 import TypeBtn from "../../components/TypeBtn/TypeBtn";
 
 interface IPropsDataTypes {
-  dataTypes: TType[]
-  setDataTypes: (dataTypes: TType[]) => void
+  dataTypes: ListPoke[]
+  setDataTypes: (dataTypes: ListPoke[]) => void
 }
 
 const Selection = () => {
@@ -44,7 +44,7 @@ const Selection = () => {
       <section className="flex flex-col items-center">
         <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
         <article className="grid grid-cols-2 gap-4 px-10 pt-8">
-          {dataTypes.map((dataType: TType) => (
+          {dataTypes.map((dataType: ListPoke) => (
               <TypeBtn dataType={dataType} key={crypto.randomUUID()}/>
           ))}
         </article>

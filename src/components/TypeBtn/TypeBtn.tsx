@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { TType } from "../../interfaces/interfaces";
+import { ListPoke } from "../../interfaces/interfaces";
 
 //Props für Kommunikation zwischen hier und Selection
 interface ITypeBtnProps {
-    dataType : TType
+    dataType : ListPoke
 }
 
 const TypeBtn = ({dataType}: ITypeBtnProps) => {

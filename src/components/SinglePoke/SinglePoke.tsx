@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
 import { Link } from "react-router-dom";
