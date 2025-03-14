@@ -34,10 +34,10 @@ const Selection = () => {
     <>
       <header className=" flex items-center justify-between px-5 py-5">
         <div>
-          <img src="../../../public/images/Pokemon.png" alt="Pokemon Logo" />
+          <img src="/images/Pokemon.png" alt="Pokemon Logo" />
         </div>
         <Link to={"/"}>
-          <img src="../../../public/images/Vector.png" alt="X" />
+          <img src="/images/Vector.png" alt="X" />
         </Link>
       </header>
 
