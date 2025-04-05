@@ -5,19 +5,19 @@
     --color-bug: #3bb900;
     --color-dark: #1c1c1c;
     --color-dragon: #00458a;
-    --color-electric: #ffe600;
-    --color-fairy: #ffc2f9;
+    --color-electric: #f9c402;
+    --color-fairy: #ffa7f6;
     --color-fighting: #e40000;
     --color-fire: #ff9900;
-    --color-flying: #ccdadd;
+    --color-flying: #b7d1d7;
     --color-ghost: #5a1e64;
     --color-grass: #57921c;
     --color-ground: #965A00;
-    --color-ice: #6ad2ff;
+    --color-ice: #5bd2f5;
     --color-normal: #b3b3b3;
     --color-plant: #70df00;
     --color-poison: #ab00ae;
-    --color-psychic: #ff81f2;
+    --color-psychic: #e87dfb;
     --color-rock: #e1b237;
     --color-steel: #2a4950;
     --color-water: #00a0e4;
@@ -28,38 +28,32 @@
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url(/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+    font-family: "Chivo";
+    src: url(/fonts/Chivo-VariableFont_wght.ttf);
 }
 
 main {
-    background-color: #ccdadd;
-    font-family: "Roboto", sans-serif;
-}
-
-main.dark-mode {
-    background-color: #05070f;
-}
-
-main.dark-mode .card-bg {
-    background: linear-gradient(70deg, #BFDFFF 3%, #001224 95%);
-    color: #fff;
+    /* background-color: #ccdadd; */
+    background: linear-gradient(0deg, rgb(73 116 217) 0%, rgb(255 244 211) 85%);
+    background-attachment: fixed;
+    font-family: "Chivo", sans-serif;
+    color: #115ca7;
 }
 
 h1, h2 {
     color: var(--color-poke-yellow);
-    font-weight: 900;
+    font-weight: 800;
     position: relative;
     -webkit-text-stroke-color: #2C72B8;
 }
 
 h1 {
     font-size: 30px;
-    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-width: 7px;
 }
 
 h2 {
-    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-width: 6px;
     font-size: 20px;
 }
 
@@ -76,5 +70,43 @@ h1 span, h2 span {
 }
 
 .card-bg {
-    background: linear-gradient(70deg, #FFE1C6 3%, var(--color-poke-yellow) 80%);
+    background: linear-gradient(10deg, #FFE1C6 3%, var(--color-poke-yellow) 80%);
+}
+
+a, button {
+    transition: transform .2s ease
+}
+a:hover, button:hover {
+    transform: scale(.9);
+}
+
+.dropShadow {
+    box-shadow: 4px 4px 0 #36608a80;
+}
+
+main.dark-mode {
+    /* background-color: #05070f; */
+    background: linear-gradient(180deg, rgb(103 6 86) 0%, rgb(26 29 113) 50%);
+    background-attachment: fixed;
+}
+
+main.dark-mode .card-bg {
+    background: linear-gradient(10deg, #651b72 0%, #001538 100%);
+    color: #fff;
+}
+main.dark-mode .card-bg ~ ul, main.dark-mode input {
+    background-color: rgb(21 22 51);
+    color: #fff;
+}
+main.dark-mode .dropShadow {
+    box-shadow: 4px 4px 0 #0a152080;
+}
+main.dark-mode button, button.active {
+    background-color: var(--color-poke-blue);
+    color: var(--color-poke-yellow)
+}
+
+main.dark-mode button.active {
+    color: var(--color-poke-blue);
+    background-color: var(--color-poke-yellow)
 }

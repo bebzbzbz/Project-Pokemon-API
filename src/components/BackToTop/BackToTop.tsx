@@ -35,9 +35,10 @@ const BackToTop = ({target}: BackToTopProps) => {
     return (  
         <>
             {showButton && (
-                <div className="fixed rounded-full h-10 w-10 bg-amber-400 bottom-5 right-5 flex justify-center items-center z-10" onClick={() => scrollToRef(target)}>
-                <img src="/images/back.svg" alt="" className="rotate-90 mb-1" />
-            </div> )}
+                <div className="fixed rounded-full h-10 w-10 bg-amber-400 bottom-5 right-5 flex justify-center items-center z-10 cursor-pointer" onClick={() => scrollToRef(target)}>
+                    <img src="/images/back.svg" alt="" className="rotate-90 mb-1" />
+                </div> 
+            )}
         </>
     );
 }

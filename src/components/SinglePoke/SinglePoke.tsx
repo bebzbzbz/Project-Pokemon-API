@@ -48,11 +48,11 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
     }
 
     return (  
-        <Link to={`/${singlePoke?.name}`} className="flex flex-col" onClick={resetSearchName}>
-            <div className="card-bg relative rounded-t-2xl flex justify-center h-23">
+        <Link to={`/${singlePoke?.name}`} className="flex rounded-2xl dropShadow flex-col" onClick={resetSearchName}>
+            <div className="card-bg relative rounded-t-2xl  flex justify-center h-23">
                 <img className="h-full -mt-3" src={singlePoke?.sprites.other.showdown.front_default ? singlePoke?.sprites.other.showdown.front_default : singlePoke?.sprites.other.home.front_default} alt={singlePoke?.name}/>
             </div>
-            <ul className="bg-white rounded-b-2xl flex justify-between px-3 py-1 text-right">
+            <ul className="bg-gray-100 rounded-b-2xl flex justify-between px-3 py-1 text-right">
                 <li>#{pokeId}</li>
                 <li>{pokename}</li>
             </ul>

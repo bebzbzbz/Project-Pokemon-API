@@ -35,9 +35,9 @@ const PokeListType = () => {
 
     return ( 
         <section>
-            <h1 className="text-center">{singleType?.name.toUpperCase()}<span className="span-type">{singleType?.name.toUpperCase()}</span></h1>
+            <h1 className="text-center">TYPE {singleType?.name.toUpperCase()}<span className="span-type">TYPE {singleType?.name.toUpperCase()}</span></h1>
             {singleType ? 
-                    <article className="grid grid-cols-2 gap-x-5 gap-y-10 p-7">
+                    <article className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 py-7">
                         {singleType?.pokemon.map((pokemon: Pokemony) => (
                         <SinglePoke pokemonFromList={pokemon.pokemon} key={crypto.randomUUID()}/>
                     ))}
