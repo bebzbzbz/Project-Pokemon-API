@@ -28,7 +28,7 @@ const PokeCardItem = ({ pokemon }: PokeCardItemProps) => {
       <div className="card-bg relative rounded-2xl flex justify-center h-23 w-1/2 md:w-1/3 mb-3 dropShadow">
         <img
           className={`${pokemon.sprites.other.showdown.front_default ? "-mt-3 h-full" : "h-25 -mt-7"}`}
-          src={pokemon.sprites.other.showdown.front_default ? pokemon.sprites.other.showdown.front_default : pokemon.sprites.other.home.front_default}
+          src={pokemon.sprites.other.showdown.front_default ? pokemon.sprites.other.showdown.front_default : (pokemon.sprites.other.home.front_default ? pokemon.sprites.other.home.front_default : "/images/pokeball.svg")}
           alt={pokeName}
         />
       </div>

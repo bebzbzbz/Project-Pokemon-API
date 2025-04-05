@@ -31,8 +31,6 @@ const PokeListType = () => {
         fetchData()
     }, [])
 
-    console.log(singleType);
-
     return ( 
         <section>
             <h1 className="text-center">TYPE {singleType?.name.toUpperCase()}<span className="span-type">TYPE {singleType?.name.toUpperCase()}</span></h1>

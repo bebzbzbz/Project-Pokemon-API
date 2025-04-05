@@ -3,6 +3,7 @@ import { ListPoke, Pokemon } from "../../interfaces/interfaces";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
+import Loader from "../Loader/Loader";
 
 interface SinglePokeProps {
     pokemonFromList: ListPoke;
@@ -49,8 +50,12 @@ const SinglePoke = ({pokemonFromList} : SinglePokeProps) => {
 
     return (  
         <Link to={`/${singlePoke?.name}`} className="flex rounded-2xl dropShadow flex-col" onClick={resetSearchName}>
-            <div className="card-bg relative rounded-t-2xl  flex justify-center h-23">
-                <img className="h-full -mt-3" src={singlePoke?.sprites.other.showdown.front_default ? singlePoke?.sprites.other.showdown.front_default : singlePoke?.sprites.other.home.front_default} alt={singlePoke?.name}/>
+            <div className="card-bg relative rounded-t-2xl h-23">
+                {singlePoke?.sprites.other.showdown ? 
+                    <img className="mx-auto h-full max-w-3/4 lg:max-w-1/2 object-contain -mt-3" src={singlePoke?.sprites.other.showdown.front_default ? singlePoke?.sprites.other.showdown.front_default : singlePoke?.sprites.other.home.front_default ? singlePoke?.sprites.other.home.front_default : "/images/pokeball.svg"} alt={singlePoke?.name}/> 
+                    : <Loader/>
+                }
+                
             </div>
             <ul className="bg-gray-100 rounded-b-2xl flex justify-between px-3 py-1 text-right">
                 <li>#{pokeId}</li>
