@@ -11,7 +11,11 @@ interface MainContextProps {
   dataTypes: ListPoke[]
   setDataTypes: (dataTypes: ListPoke[]) => void
   searchName: string
-  setSearchName: (searchName: string) => void
+  setSearchName: (searchName: string) => void,
+  loadOffset: string,
+  setLoadOffset: (loadOffset: string) => void,
+  loadLimit: string,
+  setLoadLimit: (loadLimit: string) => void,
 }
 
 export const mainContext = createContext<MainContextProps | null>(null);
@@ -32,9 +36,12 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
   //useState für die InputSearchFunction
   const [searchName, setSearchName] = useState<string>("")
 
+  const [loadOffset, setLoadOffset] = useState<string>("")
+  const [loadLimit, setLoadLimit] = useState<string>("151")
+
   return (
     <>
-      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName}}>
+      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName, loadOffset, setLoadOffset, loadLimit, setLoadLimit}}>
         {children}
       </mainContext.Provider>
     </>

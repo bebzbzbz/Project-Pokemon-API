@@ -32,10 +32,10 @@ const Selection = () => {
 
   return (
     <>
-      <header className=" flex items-center justify-between px-5 py-5">
-        <div>
+      <header className="flex items-center justify-between">
+        <Link to={"/"}>
           <img src="/images/Pokemon.png" alt="Pokemon Logo" />
-        </div>
+        </Link>
         <Link to={"/"}>
           <img src="/images/Vector.png" alt="X" />
         </Link>
@@ -43,7 +43,7 @@ const Selection = () => {
 
       <section className="flex flex-col items-center">
         <h1 className="text-center">TYPES<span className="span-type">TYPES</span></h1>
-        <article className="grid grid-cols-2 gap-4 px-10 pt-8">
+        <article className="grid grid-cols-2 md:grid-cols-4 gap-4 px-10 pt-8">
           {dataTypes.map((dataType: ListPoke) => (
               <TypeBtn dataType={dataType} key={crypto.randomUUID()}/>
           ))}
