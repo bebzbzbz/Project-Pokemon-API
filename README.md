@@ -1,6 +1,6 @@
 # Pokémon API Team-Projekt 🌀⚡
 
-[iPhone-13-PRO-pokemon-api-duo-project.vercel.app-kmtstnia7-eot9.webm](https://github.com/user-attachments/assets/413dcf57-ce13-4ce5-bdda-5bccdb05883a)
+[iPhone-13-PRO-pokemon-api-duo-project.vercel.app-n-gem9cm_ew3bk.webm](https://github.com/user-attachments/assets/bcbb0854-6db4-4461-a9ab-7dbcad900e46)
 
 The Pokémon API Project was developed as a team and offers an interactive application that makes it possible to retrieve Pokémon data from a public API. The main features include displaying an overview of all Pokémon per generation on the home page, the ability to search for a specific Pokémon, and a detailed view of each Pokémon that includes additional information such as types and attacks.
 
