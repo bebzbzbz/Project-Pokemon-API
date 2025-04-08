@@ -2,7 +2,7 @@
 
 [iPhone-13-PRO-localhost-s_i2brhje_ukck.webm](https://github.com/user-attachments/assets/33c52109-1f67-465f-845f-1ac223cd7344)
 
-The Pokémon API Project was developed as a team and offers an interactive application that makes it possible to retrieve Pokémon data from a public API. The main features include displaying an overview of 1st Gen Pokémon on the home page, the ability to search for a specific Pokémon, and a detailed view of each Pokémon that includes additional information such as types and attacks.
+The Pokémon API Project was developed as a team and offers an interactive application that makes it possible to retrieve Pokémon data from a public API. The main features include displaying an overview of all Pokémon per generation on the home page, the ability to search for a specific Pokémon, and a detailed view of each Pokémon that includes additional information such as types and attacks.
 
 The application was developed using React.js and implements a user-friendly navigation that allows users to switch between different views and Pokémon detail pages. The header includes a dark/light mode button to customise the user interface according to the user's preferences.
 
@@ -23,7 +23,7 @@ The application was developed using React.js and implements a user-friendly navi
 ### Features
 
 Home page:
-- Displays all Pokémon retrieved from the API, including GIFs, name and ID
+- Displays Pokémon per generation retrieved from the API, including GIFs, name and ID
 - Possibility to search for a specific Pokémon via an input field
 - Possibility to click directly on one of the Pokémon to access the detailed view
 
@@ -38,6 +38,7 @@ Dark/Light Toggle Mode:
 Navigation:
 - The large Pokémon logo in the header of the page directs the user from each page back to the homepage
 - A burger menu on the homepage directs to an overview of all Pokémon types
+- Possibility to switch between Pokémon generations
 - Clicking on a type takes the user to an overview of all Pokémon of that type
 - From the type overview, the user can switch back to the detailed view of a Pokémon
 - A back-to-top button bring the user back up to the header of the home page

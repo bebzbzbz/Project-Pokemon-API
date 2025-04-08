@@ -36,12 +36,14 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
   //useState für die InputSearchFunction
   const [searchName, setSearchName] = useState<string>("")
 
+  // für den fetch der unterschiedlichen generationen
   const [loadOffset, setLoadOffset] = useState<string>("")
   const [loadLimit, setLoadLimit] = useState<string>("151")
 
   return (
     <>
-      <mainContext.Provider value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName, loadOffset, setLoadOffset, loadLimit, setLoadLimit}}>
+      <mainContext.Provider 
+        value={{ dataPokeList, setDataPokeList, dataTypes, setDataTypes, singleType, setSingleType, dark, setDark, searchName, setSearchName, loadOffset, setLoadOffset, loadLimit, setLoadLimit}}>
         {children}
       </mainContext.Provider>
     </>

@@ -34,10 +34,11 @@
 
 main {
     /* background-color: #ccdadd; */
-    background: linear-gradient(0deg, rgb(73 116 217) 0%, rgb(255 244 211) 85%);
+    background: linear-gradient(0deg, rgb(73 116 217) 0%, rgb(255 244 211) 95%);
     background-attachment: fixed;
     font-family: "Chivo", sans-serif;
     color: #115ca7;
+    transition: background 0.5s ease;
 }
 
 h1, h2 {
@@ -49,18 +50,17 @@ h1, h2 {
 
 h1 {
     font-size: 30px;
-    -webkit-text-stroke-width: 7px;
+    -webkit-text-stroke-width: 8px;
 }
-
 h2 {
     -webkit-text-stroke-width: 6px;
     font-size: 20px;
 }
-
 h1 span, h2 span {
     position: absolute;
     left: 0;
     -webkit-text-stroke: 0;
+    width: 100%;
 }
 
 .span-type {
@@ -84,10 +84,13 @@ a:hover, button:hover {
     box-shadow: 4px 4px 0 #36608a80;
 }
 
+/* === DARK MODE === */
+
 main.dark-mode {
     /* background-color: #05070f; */
     background: linear-gradient(180deg, rgb(103 6 86) 0%, rgb(26 29 113) 50%);
     background-attachment: fixed;
+    transition: background 0.5s ease
 }
 
 main.dark-mode .card-bg {
@@ -98,14 +101,15 @@ main.dark-mode .card-bg ~ ul, main.dark-mode input {
     background-color: rgb(21 22 51);
     color: #fff;
 }
+
 main.dark-mode .dropShadow {
     box-shadow: 4px 4px 0 #0a152080;
 }
+
 main.dark-mode button, button.active {
     background-color: var(--color-poke-blue);
     color: var(--color-poke-yellow)
 }
-
 main.dark-mode button.active {
     color: var(--color-poke-blue);
     background-color: var(--color-poke-yellow)

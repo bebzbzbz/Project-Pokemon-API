@@ -25,7 +25,7 @@ const Home = () => {
 
                     // search Funktion!
                     if(searchName != "") {
-                        const filteredPokes = dataPokeList.filter((singlePokemon: ListPoke) => singlePokemon.name.includes(searchName))
+                        const filteredPokes = response.data.results.filter((singlePokemon: ListPoke) => singlePokemon.name.includes(searchName))
                         setDataPokeList(filteredPokes)
                     }
                 }
@@ -38,14 +38,22 @@ const Home = () => {
 
     return (  
         <section>
-                <article className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 py-7">
-                {
-                    dataPokeList ?
-                    dataPokeList.map((singlePoke: ListPoke) => {
-                        return <SinglePoke key={singlePoke.name} pokemonFromList={singlePoke} />;
-                    }
-                ): <Loader/>}
-            </article>
+            {
+                dataPokeList.length > 0 ? 
+                    <article className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 py-7">
+                    {
+                        dataPokeList ?
+                        dataPokeList.map((singlePoke: ListPoke) => {
+                            return <SinglePoke key={singlePoke.name} pokemonFromList={singlePoke} />;
+                        }
+                    ): <Loader/>}
+                    </article>
+                : <div className="text-center">
+                    <h1 className="mb-5">¯\_(ツ)_/¯<span>¯\_(ツ)_/¯</span></h1>
+                    <h2>No Pokémon found<span>No Pokémon found</span></h2>
+                </div>
+            }
+                
         </section>
     );
 }

@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { mainContext } from "../../context/MainProvider";
 import BackToTop from "../BackToTop/BackToTop";
-import GenBtn from "../GenBtn/GenBtn";
+import AllGensBtns from "../AllGensBtns/AllGensBtns";
 
 interface IDarkModeToggleProps {
     dark: boolean,
@@ -26,6 +26,7 @@ const Header = () => {
 
     const handleInputSearch = () => {
         setSearchName(nameSearchRef.current?.value.toLowerCase() || "")
+        console.log(searchName)
     }
 
     const topRef = useRef<HTMLDivElement>(null);
@@ -39,10 +40,10 @@ const Header = () => {
                 <nav className={`flex justify-between items-center ${homeMenu && `mb-7`}`}>
                     {homeMenu ? 
                         <Link to="/selection">
-                            <img src="/images/burgermenu.svg" alt="Burger Menu" />
+                            <img src="/images/burgermenu.svg" alt="Burger Menu" className="drop-shadow-lg" />
                         </Link>
                         : 
-                        <img className="cursor-pointer hover:scale-90 transition ease duration-200" onClick={()=> navigate(-1)} src="/images/back.svg" alt="Back Arrow" />
+                        <img className="cursor-pointer hover:scale-90 transition ease duration-200 drop-shadow-lg" onClick={()=> navigate(-1)} src="/images/back.svg" alt="Back Arrow" />
                     }
                     
                     {homeMenu &&
@@ -53,21 +54,12 @@ const Header = () => {
                             ref={nameSearchRef}
                             value={searchName}/>
                     }
-                    <img className="cursor-pointer hover:scale-90 transition ease duration-200" src="/images/darklight-toggle.svg" alt="Dark/Light Mode" 
+                    <img className="cursor-pointer hover:scale-90 transition ease duration-200 drop-shadow-lg" src="/images/darklight-toggle.svg" alt="Dark/Light Mode" 
                         onClick={darkLightToggle}/>
                 </nav>
                 {homeMenu && 
-                    <div className="genBtns flex flex-wrap justify-center gap-3">
-                        <GenBtn text="Gen 1" offset="" limit="151"/>
-                        <GenBtn text="Gen 2" offset="offset=151&" limit="100"/>
-                        <GenBtn text="Gen 3" offset="offset=251&" limit="135"/>
-                        <GenBtn text="Gen 4" offset="offset=386&" limit="107"/>
-                        <GenBtn text="Gen 5" offset="offset=493&" limit="156"/>
-                        <GenBtn text="Gen 6" offset="offset=649&" limit="72"/>
-                        <GenBtn text="Gen 7" offset="offset=721&" limit="88"/>
-                        <GenBtn text="Gen 8" offset="offset=809&" limit="96"/>
-                        <GenBtn text="Gen 9" offset="offset=905&" limit="120"/>
-                    </div>}
+                    <AllGensBtns/>
+                }
             </header>
             <BackToTop target={topRef as React.RefObject<HTMLDivElement>}/>
         </>
